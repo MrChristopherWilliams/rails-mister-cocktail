@@ -10,7 +10,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-gr-c-s-loaded="true" cz-shortcut-listen="true" class="bg-white">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/cocktails">Mister Cocktail</a>
+        </div>
+        <div>
+          <a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/cocktails/new">Add cocktail</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
     <%= yield %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->

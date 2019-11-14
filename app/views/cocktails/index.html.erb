@@ -1,0 +1,25 @@
+<h1>My list of cocktails</h1>
+<br>
+
+<div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-4">
+      <div class="cocktail-card my-3 shadow">
+          <img class="card-img-top" src="https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2013/11/mojito-cocktails.jpg?itok=7ZS6egg_" alt="Card image cap">
+          <div class="cocktail-card-content bg-light p-3">
+            <div class="cocktail-card-title">
+              <h4 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail), class: "text-dark" %></h4>
+            </div>
+          </div>
+          <div class="cocktail-card-actions p-4 bg-white">
+            <div>
+              <%= link_to 'More Info', cocktail_path(cocktail)%>
+            </div>
+            <div>
+              <%= link_to "Delete cocktail", cocktail_path(cocktail), class: "text-danger",method: :delete %>
+            </div>
+          </div>
+      </div>
+    </div>
+    <% end %>
+  <div>
